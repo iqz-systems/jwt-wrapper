@@ -20,7 +20,7 @@
     "verify"
   ],
   "author": "IQZ Systems",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "dependencies": {
     "@types/jsonwebtoken": "^7.2.5",
     "@types/node": "^8.5.1",
