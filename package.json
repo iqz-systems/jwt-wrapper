@@ -6,6 +6,8 @@
   "types": "./dist/index.d.ts",
   "private": false,
   "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run build",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts"
   },
   "repository": {
