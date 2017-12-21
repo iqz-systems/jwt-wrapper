@@ -1,6 +1,6 @@
 {
   "name": "@iqz/jwt-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for jsonwebtoken simplifying its configuration.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,7 @@
     "verify"
   ],
   "author": "IQZ Systems",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "dependencies": {
     "@types/jsonwebtoken": "^7.2.5",
     "@types/node": "^8.5.1",
