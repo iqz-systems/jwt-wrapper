@@ -1,0 +1,38 @@
+{
+  "name": "@iqz/jwt-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper for jsonwebtoken simplifying its configuration.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://iqz@vs-ssh.visualstudio.com:22/identity-manager/_ssh/jwt-wrapper"
+  },
+  "keywords": [
+    "jwt",
+    "sign",
+    "verify"
+  ],
+  "author": "IQZ Systems",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@types/jsonwebtoken": "^7.2.5",
+    "@types/node": "^8.5.1",
+    "jsonwebtoken": "^8.1.0",
+    "typescript": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/del": "^3.0.0",
+    "@types/mocha": "^2.2.44",
+    "chai": "^4.1.2",
+    "del": "^3.0.0",
+    "mocha": "^4.0.1",
+    "rimraf": "^2.6.2",
+    "ts-node": "^4.0.2"
+  }
+}
