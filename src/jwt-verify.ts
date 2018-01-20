@@ -54,10 +54,10 @@ export class JwtVerify extends JwtBase {
    * TokenExpiredError.
    * @method verifyToken
    * @param  {string}          token The JwtToken string.
-   * @param  {string}          audience A string or regular expression denoting the audience.
+   * @param  {string | string[]} audience A string or list of strings or regular expression denoting the audience.
    * @return {Promise<object>}       A Promise wrapping the decoded token.
    */
-  async verifyToken(token: string, audience: string): Promise<object> {
+  async verifyToken(token: string, audience: string | string[]): Promise<object> {
     if (!this.jwtSecret) {
       throw new Error('JwtSign not initialized. Make sure you are calling init() before calling this method. You only need to do this once in your app.');
     }
@@ -69,7 +69,7 @@ export class JwtVerify extends JwtBase {
     }
   }
 
-  private _verifyToken(token: string, audience: string): Promise<object> {
+  private _verifyToken(token: string, audience: string | string[]): Promise<object> {
     this.jwtOptions.audience = audience;
 
     return new Promise((resolve, reject) => {
