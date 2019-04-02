@@ -54,6 +54,7 @@ export class JwtSign extends JwtBase {
    * @method getToken
    * @param  {object}          payload  The payload to be signed.
    * @param  {string}          audience Target audience for the JWT.
+   * @param  {number}          expiryTimeSeconds Override the Token expiry time.
    * @return {Promise<string>}          A Promise wrapping the signed contents.
    */
   async getToken(payload: object, audience: string, expiryTimeSeconds?: number): Promise<string> {
