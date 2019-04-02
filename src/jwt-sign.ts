@@ -71,6 +71,26 @@ export class JwtSign extends JwtBase {
     }
   }
 
+  /**
+   * Signs and returns a JWT.
+   * @method getToken
+   * @param  {object}          payload  The payload to be signed.
+   * @param  {string}          audience Target audience for the JWT.
+   * @param  {number}          expiryTimeSeconds Override the already set time.
+   * @return {Promise<string>}          A Promise wrapping the signed contents.
+   */
+  async getTokenForTime(payload: object, audience: string, expiryTimeSeconds: number): Promise<string> {
+    if (!this.jwtSecret) {
+      throw new Error('JwtSign not initialized. Make sure you are calling init() before calling this method. You only need to do this once in your app.');
+    }
+    try {
+      this.jwtOptions.expiresIn = expiryTimeSeconds;
+      return await this._getToken(payload, audience);
+    } catch (error) {
+      throw error;
+    }
+  }
+
   private _getToken(payload: object, audience: string): Promise<string> {
     return new Promise((resolve, reject) => {
       this._initTokenExpiry();
