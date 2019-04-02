@@ -75,7 +75,7 @@ export class JwtSign extends JwtBase {
         jwtOptionToAssign = Object.assign({}, this.jwtOptions);
         jwtOptionToAssign.expiresIn = expiryTimeSeconds;
       }
-      sign({ payload: payload }, this.jwtSecret, jwtOptionToAssign ? jwtOptionToAssign : this.jwtOptions, (err: Error, token: string) => {
+      sign({ payload: payload }, this.jwtSecret, (jwtOptionToAssign ? jwtOptionToAssign : this.jwtOptions), (err: Error, token: string) => {
         if (err) {
           reject(err);
         } else {
